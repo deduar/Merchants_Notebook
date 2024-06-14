@@ -6,8 +6,9 @@ authors = ["Eduardo Diez <deduar@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.9"
-coco-models = "^0.0.5"
+python = ">=3.9,<3.13"
+coco-merchant = "^0.0.15"
+coco-merchant-pfm-es = "^0.0.15"
 
 
 [[tool.poetry.source]]
