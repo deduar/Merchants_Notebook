@@ -1,0 +1,10 @@
+Poetry AWS codeartifact
+
+eval $(cs acp mgt)
+export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain coinscrap --domain-owner 286769421501 --region  eu-west-3 --profile coinscrap-mgt --query authorizationToken --output text`
+export CODEARTIFACT_REPOSITORY_URL=`aws codeartifact get-repository-endpoint --domain coinscrap --domain-owner 286769421501 --repository coinscrap --format pypi --query repositoryEndpoint --output text`
+
+export POETRY_HTTP_BASIC_COINSCRAP_USERNAME=aws
+export POETRY_HTTP_BASIC_COINSCRAP_PASSWORD=`aws codeartifact get-authorization-token --domain coinscrap --domain-owner 286769421501 --region eu-west-3 --profile coinscrap-mgt --query authorizationToken --output text`
+
+poetry source add coinscrap "${CODEARTIFACT_REPOSITORY_URL}simple"

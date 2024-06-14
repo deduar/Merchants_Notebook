@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "notebook"
+version = "0.1.0"
+description = ""
+authors = ["Eduardo Diez <deduar@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+coco-models = "^0.0.5"
+
+
+[[tool.poetry.source]]
+name = "coinscrap"
+url = "https://coinscrap-286769421501.d.codeartifact.eu-west-3.amazonaws.com/pypi/coinscrap/simple"
+priority = "primary"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
